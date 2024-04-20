@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.15)
-project(ravencoin_seeder)
+project(aidpcoin_seeder)
 
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(.)
 
-add_executable(ravencoin_seeder
-        ravencoin.cpp
-        ravencoin.h
+add_executable(aidpcoin_seeder
+        aidpcoin.cpp
+        aidpcoin.h
         combine.pl
         compat.h
         db.cpp

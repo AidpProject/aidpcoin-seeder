@@ -1,6 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2011 The Bitcoin developers
 // Copyright (C) 2020 The Raven Core developers
+// Copyright (C) 2024 The Aidp Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file license.txt or http://www.opensource.org/licenses/mit-license.php.
 
@@ -25,7 +26,7 @@ static const char *ppszTypeName[] =
                 "block",
         };
 
-unsigned char pchMessageStart[4] = {0x52, 0x41, 0x56, 0x4e};  // HEX 4 R A V N
+unsigned char pchMessageStart[4] = {0x41, 0x49, 0x44, 0x50};  // HEX 4 A I D P
 
 CMessageHeader::CMessageHeader()
 {

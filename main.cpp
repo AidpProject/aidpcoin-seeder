@@ -12,7 +12,7 @@
 #include <getopt.h>
 #include <atomic>
 
-#include "ravencoin.h"
+#include "aidpcoin.h"
 #include "db.h"
 
 using namespace std;
@@ -44,7 +44,7 @@ public:
 
     void ParseCommandLine(int argc, char **argv)
     {
-        static const char *help = "Ravencoin-seeder\n"
+        static const char *help = "Aidpcoin-seeder\n"
                                   "Usage: %s -h <host> -n <ns> [-m <mbox>] [-t <threads>] [-p <port>]\n"
                                   "\n"
                                   "Options:\n"
@@ -468,13 +468,13 @@ extern "C" void *ThreadStats(void *)
     return nullptr;
 }
 
-static const string mainnet_seeds[] = {"seed-raven.bitactivate.com",
-                                       "seed-raven.ravencoin.com",
-                                       "seed-raven.ravencoin.org",
+static const string mainnet_seeds[] = {"seed1-ai-depin.org",
+                                       "seed2-ai-depin.org",
+                                       "seed3-ai-depin.org",
                                        ""};
-static const string testnet_seeds[] = {"seed-testnet-raven.bitactivate.com",
-                                       "seed-testnet-raven.ravencoin.com",
-                                       "seed-testnet-raven.ravencoin.org",
+static const string testnet_seeds[] = {"seed1-testnet-ai-depin.org",
+                                       "seed2-testnet-ai-depin.org",
+                                       "seed-testnet-ai-depin.org",
                                        ""};
 static const string regtest_seeds[] = {"localhost",
                                        ""};
@@ -485,7 +485,7 @@ extern "C" void *ThreadSeeder(void *)
 {
     if (!fTestNet && !fRegTest)
     {
-        db.Add(CService("kjy2eqzk4zwi5zd3.onion", 8767), true);
+        db.Add(CService("kjy2eqzk4zwi5zd3.onion", 17001), true);
     }
     do
     {
@@ -545,19 +545,19 @@ int main(int argc, char **argv) {
     }
     if (opts.fUseTestNet) {
         printf("Using testnet.\n");
-        pchMessageStart[0] = 0x52;
-        pchMessageStart[1] = 0x56;
-        pchMessageStart[2] = 0x4e;
-        pchMessageStart[3] = 0x54;
+        pchMessageStart[0] = 0x41;
+        pchMessageStart[1] = 0x49;
+        pchMessageStart[2] = 0x44;
+        pchMessageStart[3] = 0x50;
         seeds = testnet_seeds;
         fTestNet = true;
     }
     if (opts.fUseRegTest) {
         printf("Using regtest.\n");
-        pchMessageStart[0] = 0x43;
-        pchMessageStart[1] = 0x52;
-        pchMessageStart[2] = 0x4f;
-        pchMessageStart[3] = 0x57;
+        pchMessageStart[0] = 0x41;
+        pchMessageStart[1] = 0x49;
+        pchMessageStart[2] = 0x44;
+        pchMessageStart[3] = 0x50;
         seeds = regtest_seeds;
         fRegTest = true;
     }
